@@ -10,7 +10,9 @@ export class LayoutComponent implements OnInit, AfterViewInit {
 
   mySwiper: Swiper;
 
-  constructor() { }
+  constructor() {
+    this.mySwiper = new Swiper('');
+  }
 
   ngOnInit() {
   }

@@ -1,8 +1,10 @@
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+//import { MatTableDataSource } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { ViewChild } from '@angular/core';
 
 // TODO: Replace this with your own data model type
 export interface ProductsItem {
@@ -41,8 +43,8 @@ const EXAMPLE_DATA: ProductsItem[] = [
  */
 export class ProductsDataSource extends DataSource<ProductsItem> {
   data: ProductsItem[] = EXAMPLE_DATA;
-  paginator: MatPaginator;
-  sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor() {
     super();
@@ -103,6 +105,6 @@ export class ProductsDataSource extends DataSource<ProductsItem> {
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
-function compare(a, b, isAsc) {
+function compare(a, b, isAsc : boolean) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MaterialModule } from '@material/material.module';
-import { SharedModule } from '@shared/shared.module';
+import { MaterialModule } from 'src/app/material/material.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+//from '@shared/shared.module';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { SliderComponent } from './components/slider/slider.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ProductsComponent } from './components/products/products.component';
 
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [SliderComponent, LayoutComponent, ProductsComponent],
@@ -16,7 +18,8 @@ import { ProductsComponent } from './components/products/products.component';
     CommonModule,
     HomeRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    SwiperModule
   ]
 })
 export class HomeModule { }

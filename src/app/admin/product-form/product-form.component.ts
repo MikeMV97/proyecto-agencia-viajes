@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
-import { ProductsService } from '@core/services/products.service';
+import { ProductsService } from 'src/app/core/services/products.service';
+//from '@core/services/products.service';
 
 @Component({
   selector: 'app-product-form',
@@ -16,7 +17,14 @@ export class ProductFormComponent {
     private fb: FormBuilder,
     private productsService: ProductsService
   ) {
-    this.buildForm();
+    this.form = this.fb.group({
+      title: [null, [Validators.required]],
+      price: [0, [Validators.required]],
+      colors: [null],
+      description: [null, [Validators.required]],
+      count: [1, [Validators.required]],
+      image: [null],
+    });
   }
 
   onSubmit() {
@@ -26,16 +34,5 @@ export class ProductFormComponent {
         console.log(rta);
       });
     }
-  }
-
-  private buildForm() {
-    this.form = this.fb.group({
-      title: [null, [Validators.required]],
-      price: [0, [Validators.required]],
-      colors: [null],
-      description: [null, [Validators.required]],
-      count: [1, [Validators.required]],
-      image: [null],
-    });
   }
 }

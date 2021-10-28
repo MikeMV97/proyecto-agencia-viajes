@@ -6,8 +6,8 @@ import { ProductsComponent } from './products/products.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutComponent } from './layout/layout.component';
 
-import { MaterialModule } from '@material/material.module';
-import { SharedModule } from '@shared/shared.module';
+import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared/shared.module';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
