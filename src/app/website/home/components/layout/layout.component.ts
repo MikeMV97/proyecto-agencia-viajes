@@ -11,7 +11,7 @@ export class LayoutComponent implements OnInit, AfterViewInit {
   mySwiper: Swiper;
 
   constructor() {
-    this.mySwiper = new Swiper('');
+    // this.mySwiper = new Swiper('');
   }
 
   ngOnInit() {
@@ -19,13 +19,13 @@ export class LayoutComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.mySwiper = new Swiper('.swiper-container', {
-      // pagination: {
-      //   el: '.swiper-pagination',
-      //   clickable: true,
-      // },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
       // nextButton: '.swiper-button-next',
       // prevButton: '.swiper-button-prev',
-      // autoplay: 3000,
+      autoplay: false, // 3000
       spaceBetween: 30
     });
   }

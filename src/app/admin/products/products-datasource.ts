@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 //import { MatTableDataSource } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { ViewChild } from '@angular/core';
+//import { ViewChild } from '@angular/core';
 
 // TODO: Replace this with your own data model type
 export interface ProductsItem {
@@ -43,8 +43,8 @@ const EXAMPLE_DATA: ProductsItem[] = [
  */
 export class ProductsDataSource extends DataSource<ProductsItem> {
   data: ProductsItem[] = EXAMPLE_DATA;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  paginator: MatPaginator;
+  sort: MatSort;
 
   constructor() {
     super();

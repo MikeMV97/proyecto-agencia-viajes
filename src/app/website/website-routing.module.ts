@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LayoutComponent } from '@website/components/layout/layout.component';
+import { LayoutComponent } from './components/layout/layout.component'; //from '@website/components/layout/layout.component';
 
 const routes: Routes = [
   {
@@ -29,7 +29,7 @@ const routes: Routes = [
         loadChildren: () => import('./order/order.module').then(m => m.OrderModule),
       }
     ]
-  },
+  }
 ];
 
 @NgModule({

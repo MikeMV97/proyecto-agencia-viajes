@@ -21,5 +21,9 @@ import { SwiperModule } from 'swiper/angular';
     SharedModule,
     SwiperModule
   ]
+  // ,exports: [
+  //   SliderComponent,
+  //   ProductsComponent
+  // ]
 })
 export class HomeModule { }

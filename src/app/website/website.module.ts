@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { WebsiteRoutingModule } from './website-routing.module';
@@ -10,20 +10,21 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MaterialModule } from '../material/material.module'; //from '@material/material.module';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+//import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     LayoutComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
     WebsiteRoutingModule,
     MaterialModule,
-    ReactiveFormsModule,
-    RouterModule,
-  ]
+    ReactiveFormsModule
+  ],
+  exports: [HeaderComponent, FooterComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
 export class WebsiteModule { }
